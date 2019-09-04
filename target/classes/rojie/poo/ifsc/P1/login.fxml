@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="328.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rojie.poo.ifsc.P1.LoginController">
+   <children>
+      <VBox alignment="CENTER" fillWidth="false" layoutX="70.0" layoutY="118.0" prefHeight="189.0" prefWidth="338.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="118.0">
+         <children>
+            <AnchorPane prefHeight="17.0" prefWidth="340.0">
+               <children>
+                  <Label fx:id="lblEntraSis" layoutX="-60.0" prefHeight="17.0" prefWidth="169.0" text="Entrar no Sistema" AnchorPane.leftAnchor="14.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="119.0" prefWidth="338.0">
+               <children>
+                  <Label fx:id="lblUser" layoutX="14.0" layoutY="8.0" prefHeight="28.0" prefWidth="79.0" text="Usuário" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="245.0" AnchorPane.topAnchor="8.0" />
+                  <TextField fx:id="txtGetUser" layoutX="104.0" layoutY="10.0" prefHeight="25.0" prefWidth="227.0" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="10.0" />
+                  <TextField fx:id="txtGetPass" layoutX="104.0" layoutY="36.0" prefHeight="25.0" prefWidth="227.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="36.0" />
+                  <Label fx:id="lblPass" layoutX="14.0" layoutY="40.0" prefHeight="17.0" prefWidth="40.0" text="Senha" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="284.0" AnchorPane.topAnchor="40.0" />
+                  <Button fx:id="btnEntrar" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" text="Entrar" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="78.0" />
+                  <Button fx:id="btnCadastro" layoutX="252.0" layoutY="78.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="79.0" text="Cadastre-se" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="78.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
