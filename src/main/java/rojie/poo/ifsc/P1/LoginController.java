@@ -44,6 +44,8 @@ public class LoginController {
 		Stage stage = new Stage();
 		stage.setScene(new Scene(root));
 		stage.show();
+		stage = (Stage) btnCadastro.getScene().getWindow();
+		stage.close();
 	}
 
 }
