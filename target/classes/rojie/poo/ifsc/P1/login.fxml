@@ -21,7 +21,7 @@
                   <TextField fx:id="txtGetUser" layoutX="104.0" layoutY="10.0" prefHeight="25.0" prefWidth="227.0" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="10.0" />
                   <TextField fx:id="txtGetPass" layoutX="104.0" layoutY="36.0" prefHeight="25.0" prefWidth="227.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="36.0" />
                   <Label fx:id="lblPass" layoutX="14.0" layoutY="40.0" prefHeight="17.0" prefWidth="40.0" text="Senha" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="284.0" AnchorPane.topAnchor="40.0" />
-                  <Button fx:id="btnEntrar" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" text="Entrar" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="78.0" />
+                  <Button fx:id="btnEntrar" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#Entrar" text="Entrar" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="78.0" />
                   <Button fx:id="btnCadastro" layoutX="252.0" layoutY="78.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="28.0" prefWidth="79.0" text="Cadastre-se" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="78.0" />
                </children>
             </AnchorPane>
