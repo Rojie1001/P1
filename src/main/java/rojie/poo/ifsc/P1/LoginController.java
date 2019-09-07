@@ -46,7 +46,7 @@ public class LoginController {
 		stage.close();
 	}
 	public void Entrar() throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("telaone.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("contato.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
 	
 		Stage stage = new Stage();

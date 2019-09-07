@@ -14,6 +14,7 @@ public class CadastroController {
     @FXML
     Button btnCadastrar;
 	public void Cadastro() throws IOException {
+
 		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
 	
@@ -23,4 +24,5 @@ public class CadastroController {
 		stage = (Stage) btnCadastrar.getScene().getWindow();
 		stage.close();
 	}
+
 }
