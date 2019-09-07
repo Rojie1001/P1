@@ -2,8 +2,12 @@ package rojie.poo.ifsc.P1;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -29,6 +33,12 @@ public class ContatoController implements Initializable {
 
 	@FXML
 	private CheckBox chkSugestao;
+
+	@FXML
+	private Button brnCadastrarMan;
+
+	@FXML
+	private Button btnCancelar;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
