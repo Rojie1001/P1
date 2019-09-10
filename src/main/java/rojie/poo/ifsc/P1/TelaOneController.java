@@ -42,7 +42,7 @@ public class TelaOneController implements Initializable {
 	@FXML
 	private TableView<TabelaInicial> tabela;
 
-	ObservableList<String> listEnsino = FXCollections.observableArrayList("Boletim", "Atestado");
+	ObservableList<String> listEnsino = FXCollections.observableArrayList("Atestado");
 	ObservableList<String> listEstagios = FXCollections.observableArrayList("Mural de Vagas", "Gerenciar Estágios");
 	ObservableList<String> listExtensao = FXCollections.observableArrayList("Consultar Minhas Ações", "Certificados");
 	ObservableList<String> listOutros = FXCollections.observableArrayList("Entrar em Contato", "Forum de Curso",
@@ -71,14 +71,6 @@ public class TelaOneController implements Initializable {
 				new TabelaInicial("TCC", "Sala 14", "56N12 *"));
 	}
 	public void getEnsino () throws IOException {
-	if (cmbEnsino.getValue() == "Boletim"){
-	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login.fxml"));
-	Parent root = (Parent) fxmlLoader.load();
-
-	Stage stage = new Stage();
-	stage.setScene(new Scene(root));
-	stage.show();
-		}
 	if (cmbEnsino.getValue() == "Atestado"){
 		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("atestado.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
