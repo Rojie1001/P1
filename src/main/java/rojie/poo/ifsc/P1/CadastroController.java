@@ -41,14 +41,8 @@ public class CadastroController {
 		stage.show();
 		stage = (Stage) btnCadastrar.getScene().getWindow();
 		stage.close();
-	}
-	public void loginC() {
-		ObservableList<TextField> listLogin = FXCollections.observableArrayList(txtLogin);
-		ObservableList<TextField> listSenha = FXCollections.observableArrayList(txtPass);
-		ObservableList<TextField> listNome= FXCollections.observableArrayList(txtNome);
-		
-		
-	}
+	
+}
 	
 
 }
