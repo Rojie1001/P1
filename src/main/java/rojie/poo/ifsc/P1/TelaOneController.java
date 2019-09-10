@@ -1,15 +1,20 @@
 package rojie.poo.ifsc.P1;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class TelaOneController implements Initializable {
 
@@ -64,5 +69,33 @@ public class TelaOneController implements Initializable {
 				new TabelaInicial("Gerencia de Projetos", "Sala 15", "56N12 *"),
 				new TabelaInicial("Metodologia de Pesquisa", "Sala 15", "56N12 *"),
 				new TabelaInicial("TCC", "Sala 14", "56N12 *"));
+	}
+	public void getEnsino () throws IOException {
+	if (cmbEnsino.getValue() == "Boletim"){
+	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login.fxml"));
+	Parent root = (Parent) fxmlLoader.load();
+
+	Stage stage = new Stage();
+	stage.setScene(new Scene(root));
+	stage.show();
+		}
+	if (cmbEnsino.getValue() == "Atestado"){
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("atestado.fxml"));
+		Parent root = (Parent) fxmlLoader.load();
+
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root));
+		stage.show();
+		    }
+	}
+	public void getOutros () throws IOException {
+	if (cmbOutros.getValue() == "Entrar em Contato"){
+	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("contato.fxml"));
+	Parent root = (Parent) fxmlLoader.load();
+
+	Stage stage = new Stage();
+	stage.setScene(new Scene(root));
+	stage.show();
+	    }
 	}
 }

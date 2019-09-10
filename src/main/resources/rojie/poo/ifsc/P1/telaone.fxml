@@ -12,10 +12,10 @@
          <children>
             <AnchorPane>
                <children>
-                  <ComboBox fx:id="cmbEnsino" prefHeight="25.0" prefWidth="99.0" promptText="Ensino" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="501.0" AnchorPane.topAnchor="0.0" />
+                  <ComboBox fx:id="cmbEnsino" onAction="#getEnsino" prefHeight="25.0" prefWidth="99.0" promptText="Ensino" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="501.0" AnchorPane.topAnchor="0.0" />
                   <ComboBox fx:id="cmbEstagios" layoutX="99.0" layoutY="2.0" prefHeight="25.0" prefWidth="110.0" promptText="Estágios" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="391.0" AnchorPane.topAnchor="0.0" />
                   <ComboBox fx:id="cmbExtensao" layoutX="209.0" layoutY="2.0" prefHeight="25.0" prefWidth="110.0" promptText="Extensão" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="281.0" AnchorPane.topAnchor="0.0" />
-                  <ComboBox fx:id="cmbOutros" layoutX="319.0" prefHeight="25.0" prefWidth="121.0" promptText="Outros" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="319.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="0.0" />
+                  <ComboBox fx:id="cmbOutros" layoutX="319.0" onAction="#getOutros" prefHeight="25.0" prefWidth="121.0" promptText="Outros" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="319.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </children>
