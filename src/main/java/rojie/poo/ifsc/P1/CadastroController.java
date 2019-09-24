@@ -1,9 +1,6 @@
 package rojie.poo.ifsc.P1;
 
 import java.io.IOException;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,6 +27,8 @@ public class CadastroController {
 	    @FXML
 	    private Button btnCadastrar;
 
+	    
+	    
 	  
 	public void Cadastro() throws IOException {
 

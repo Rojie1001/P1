@@ -55,9 +55,9 @@ public class TelaOneController implements Initializable {
 		cmbExtensao.setItems(listExtensao);
 		cmbOutros.setItems(listOutros);
 		
-		colCompCurri.setCellValueFactory(new PropertyValueFactory<>("comCurricular"));
-		colLocal.setCellValueFactory(new PropertyValueFactory<>("Local"));
-		colHorario.setCellValueFactory(new PropertyValueFactory<>("Horario"));
+		colCompCurri.setCellValueFactory(new PropertyValueFactory("comCurricular"));
+		colLocal.setCellValueFactory(new PropertyValueFactory("Local"));
+		colHorario.setCellValueFactory(new PropertyValueFactory("Horario"));
 
 		tabela.setItems(listaAlunos());
 	}
