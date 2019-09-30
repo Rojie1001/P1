@@ -1,4 +1,5 @@
 package database;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class Conection {
 
 	private static EntityManagerFactory getEntityManagerFactory() {
 		if (entityManagerFactory == null)
-			entityManagerFactory = Persistence.createEntityManagerFactory("com.lucasbueno.orm");
+			entityManagerFactory = Persistence.createEntityManagerFactory("teste");
 		return entityManagerFactory;
 	}
 

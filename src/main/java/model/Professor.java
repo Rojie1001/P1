@@ -1,26 +1,43 @@
 package model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-public class Professor extends User {
-	private String matricula;
+public class Professor{
+	@Id
+	private String cpf;
+	
+	private String name;
 	private String cursoAtuante;
 	private String especialidades;
-
-	public Professor(String name, String cpf, String matricula, String cursoAtuante, String especialidades) {
-		super(name, cpf);
-		this.matricula = matricula;
+	
+	public Professor() {
+		
+	}
+	
+	public Professor(String cpf, String name, String cursoAtuante, String especialidades) {
+		super();
+		this.cpf = cpf;
+		this.name = name;
 		this.cursoAtuante = cursoAtuante;
 		this.especialidades = especialidades;
 	}
 
-	public String getMatricula() {
-		return matricula;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCursoAtuante() {
@@ -40,4 +57,5 @@ public class Professor extends User {
 	}
 	
 
+	
 }
