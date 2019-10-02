@@ -9,6 +9,9 @@
         </description>
         
 		<class>model.Aluno</class>
+		<class>model.Professor</class>
+		<class>model.Curso</class>
+		
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
