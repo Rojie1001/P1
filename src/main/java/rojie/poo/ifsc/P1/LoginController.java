@@ -6,56 +6,30 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginController {
+	
+    @FXML
+    private TextField txtLogin;
 
-	@FXML
-	Label lblEntraSis;
+    @FXML
+    private TextField txtSenha;
 
-	@FXML
-	Label lblUser;
+    @FXML
+    private Button btnLoginn;
 
-	@FXML
-	Label lblPass;
-
-	@FXML
-	TextField txtGetUser;
-
-	@FXML
-	TextField txtGetPass;
-
-	@FXML
-	Button btnEntrar;
-
-	@FXML
-	Button btnCadastro;
-
-
-
-	public void Cadastrar() throws IOException {
+    public void fazerCadastro() throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("cadastro.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
 
 		Stage stage = new Stage();
 		stage.setScene(new Scene(root));
 		stage.show();
-		stage = (Stage) btnCadastro.getScene().getWindow();
+		stage = (Stage) btnLoginn.getScene().getWindow();
 		stage.close();
 	}
-
-	public void Entrar() throws IOException {
-			FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("telaone.fxml"));
-			Parent root = (Parent) fxmlLoader.load();
-
-			Stage stage = new Stage();
-			stage.setScene(new Scene(root));
-			stage.show();
-			stage = (Stage) btnEntrar.getScene().getWindow();
-			stage.close();
-		}
 
 	}
 
