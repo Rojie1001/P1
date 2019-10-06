@@ -1,6 +1,7 @@
 package rojie.poo.ifsc.P1;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,8 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class LoginController {
-	
+public class ControllerLoginProfessor {
     @FXML
     private TextField txtLogin;
 
@@ -18,18 +18,20 @@ public class LoginController {
     private TextField txtSenha;
 
     @FXML
-    private Button btnLoginn;
+    private Button btnLogin;
 
-    public void fazerCadastro() throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("cadastro.fxml"));
+    @FXML
+    private Button btnSuperUser;
+
+	
+	public void SuperUser() throws IOException {
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("loginSuperuser.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
-
 		Stage stage = new Stage();
 		stage.setScene(new Scene(root));
+		stage.setTitle("LoginSuperUser");
 		stage.show();
-		stage = (Stage) btnLoginn.getScene().getWindow();
+		stage = (Stage) btnSuperUser.getScene().getWindow();
 		stage.close();
 	}
-
-	}
-
+}

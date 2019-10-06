@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class LoginUserController {
+public class LoginAluno {
 
 	  @FXML
 	    private TextField txtLogin;
@@ -24,13 +24,17 @@ public class LoginUserController {
 	    @FXML
 	    private Button btnSuperUser;
 
+	    @FXML
+	    private Button btnLoginProfessor;
+
 
 
 	public void SuperUser() throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("loginSuperuser.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
 		Stage stage = new Stage();
 		stage.setScene(new Scene(root));
+		stage.setTitle("LoginSuperUser");
 		stage.show();
 		stage = (Stage) btnSuperUser.getScene().getWindow();
 		stage.close();
@@ -44,8 +48,18 @@ public class LoginUserController {
 			stage.setScene(new Scene(root));
 			stage.show();
 			stage = (Stage) btnLogin.getScene().getWindow();
-			stage.close();
+			
 		}
+	public void AcessoProfessor() throws IOException {
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("LoginProfessor.fxml"));
+		Parent root = (Parent) fxmlLoader.load();
+
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root));
+		stage.show();
+		stage = (Stage) btnLoginProfessor.getScene().getWindow();
+		stage.close();
+	}
 
 	}
 

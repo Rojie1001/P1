@@ -75,7 +75,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="31.0" prefWidth="117.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
          <children>
-            <Button fx:id="btnCancelarr" layoutX="1.0" layoutY="2.0" mnemonicParsing="false" text="Cancelar" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" />
+            <Button fx:id="btnCancelarr" layoutX="1.0" layoutY="2.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" />
          </children>
       </AnchorPane>
    </children>
