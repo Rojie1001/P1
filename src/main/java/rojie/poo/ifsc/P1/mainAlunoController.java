@@ -34,8 +34,14 @@ public class mainAlunoController {
 	    }
 
 	    @FXML
-	    void MeusDados(ActionEvent event) {
-
+	    void MeusDados(ActionEvent event) throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("meusDados.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			stage = (Stage) btnMeusDados.getScene().getWindow();
+			stage.close();
 	    }
 
 	    @FXML
