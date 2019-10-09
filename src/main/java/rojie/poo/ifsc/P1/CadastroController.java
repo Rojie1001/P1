@@ -44,13 +44,14 @@ public class CadastroController {
 	
     
 	public void Cadastro(ActionEvent e) throws IOException {
-		Aluno aluno = new Aluno(txtNome.getText(), txtCpf.getText(), txtCurso.getText(),
+		Aluno aluno = new Aluno(txtCpf.getText(), txtNome.getText(), txtCurso.getText(),
 				txtNewLogin.getText(), txtNewSenha.getText());
+		System.out.println(txtCpf.getText());
 		new AlunoDAO().add(aluno);
 		Button btn = (Button) e.getSource();
 		Scene scene = btn.getScene();
 		Stage stage = (Stage) scene.getWindow();
-		stage.close();
+		
 	}
 	public void Cancelar(ActionEvent e) throws IOException {
 		Button btn = (Button) e.getSource();
