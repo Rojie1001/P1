@@ -27,12 +27,12 @@
    <children>
       <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="67.0" prefWidth="742.0" GridPane.columnIndex="1" GridPane.columnSpan="3">
          <children>
-            <ButtonBar buttonMinWidth="80.0" buttonOrder="%key.unspecified" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="726.0" style="-fx-background-color: #a4ebbe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <ButtonBar fx:id="btnBar" buttonMinWidth="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="726.0" style="-fx-background-color: #a4ebbe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <buttons>
                 <Button fx:id="btnMinhasTurmas" mnemonicParsing="false" onAction="#MinhasTurmas" text="Minhas Turmas" />
                   <Button fx:id="btnAMatricula" mnemonicParsing="false" onAction="#Atestado" text="Atestado de Matricula" />
-                  <Button fx:id="btnMinhasTarefas" mnemonicParsing="false" onAction="#MinhasTarefas" text="Minhas Tarefas" />
-                  <Button fx:id="btnMeusDados" mnemonicParsing="false" onAction="#MeusDados" text="Meus Dados" />
+                  <Button fx:id="btnMinhasTarefas" mnemonicParsing="false" text="Minhas Tarefas" />
+                  <Button fx:id="btnMeusDados" mnemonicParsing="false" text="Meus Dados" />
               </buttons>
             </ButtonBar>
          </children>

@@ -1,52 +1,36 @@
 package model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
+
+
 
 @Entity
-public class Aluno{
+public class Aluno {
+
+
 	
-	
-	@Id 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String matricula;
-	
-	@Column(name = "Nome")
-	private String curso;
+	@Id
 	private String cpf;
-	private String name;
-	public Aluno() {
-		
-	}
+	private String nome;
 	
+	private String curso;
+	private String login;
+	private String senha;
 
-	public Aluno(String matricula, String curso, String cpf, String name) {
+	public Aluno() {
+
+	}
+
+	public Aluno(String cpf,String nome, String curso, String login, String senha) {
 		super();
-		this.matricula = matricula;
-		this.curso = curso;
 		this.cpf = cpf;
-		this.name = name;
-	}
-
-	public String getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
-
-	public String getCurso() {
-		return curso;
-	}
-
-	public void setCurso(String curso) {
+		this.nome = nome;
 		this.curso = curso;
+		this.login = login;
+		this.senha = senha;
 	}
+
 
 	public String getCpf() {
 		return cpf;
@@ -56,12 +40,37 @@ public class Aluno{
 		this.cpf = cpf;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	@Override
@@ -69,7 +78,6 @@ public class Aluno{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
-		result = prime * result + ((matricula == null) ? 0 : matricula.hashCode());
 		return result;
 	}
 
@@ -87,15 +95,8 @@ public class Aluno{
 				return false;
 		} else if (!cpf.equals(other.cpf))
 			return false;
-		if (matricula == null) {
-			if (other.matricula != null)
-				return false;
-		} else if (!matricula.equals(other.matricula))
-			return false;
 		return true;
 	}
-	
-	
-}
-	
 
+
+}

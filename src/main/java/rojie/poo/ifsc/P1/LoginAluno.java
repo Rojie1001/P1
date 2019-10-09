@@ -2,17 +2,19 @@ package rojie.poo.ifsc.P1;
 
 import java.io.IOException;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginAluno {
 
-	  @FXML
+	 @FXML
 	    private TextField txtLogin;
 
 	    @FXML
@@ -22,44 +24,37 @@ public class LoginAluno {
 	    private Button btnLogin;
 
 	    @FXML
-	    private Button btnSuperUser;
+	    private Button btnCadastro;
 
 	    @FXML
-	    private Button btnLoginProfessor;
+	    private ComboBox<String> cmbSelectDB;
 
-
-
-	public void SuperUser() throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("loginSuperuser.fxml"));
-		Parent root = (Parent) fxmlLoader.load();
-		Stage stage = new Stage();
-		stage.setScene(new Scene(root));
-		stage.setTitle("LoginSuperUser");
-		stage.show();
-		stage = (Stage) btnSuperUser.getScene().getWindow();
-		stage.close();
-	}
-
-	public void Entrar() throws IOException {
-			FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("telaone.fxml"));
+	    @FXML
+	   public void Cadastro() throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("cadastro.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			stage = (Stage) btnCadastro.getScene().getWindow();
+			stage.close();
+	    }
 
+	    @FXML
+	   public void Entrar() throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainAluno.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
 			stage.show();
 			stage = (Stage) btnLogin.getScene().getWindow();
-			
-		}
-	public void AcessoProfessor() throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("LoginProfessor.fxml"));
-		Parent root = (Parent) fxmlLoader.load();
+			stage.close();
+	    }
 
-		Stage stage = new Stage();
-		stage.setScene(new Scene(root));
-		stage.show();
-		stage = (Stage) btnLoginProfessor.getScene().getWindow();
-		stage.close();
-	}
+	    @FXML
+	    public void SelectDB(ActionEvent event) {
+
+	    }
 
 	}
 

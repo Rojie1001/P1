@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="TOP_CENTER" prefHeight="240.0" prefWidth="423.0" style="-fx-background-color: #e1f7f6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rojie.poo.ifsc.P1.CadastroController">
+<GridPane alignment="TOP_CENTER" prefHeight="457.0" prefWidth="687.0" style="-fx-background-color: #e1f7f6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rojie.poo.ifsc.P1.CadastroController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="94.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="121.0" />
@@ -35,7 +35,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
-            <ChoiceBox fx:id="cmbBD" layoutX="-28.0" prefWidth="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <ComboBox fx:id="cmbUserRegister" prefWidth="150.0" promptText="Tipo do Usuário" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="31.0" prefWidth="171.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
@@ -70,12 +70,12 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
          <children>
-            <Button fx:id="btnCadastro" layoutX="27.0" layoutY="3.0" mnemonicParsing="false" text="Cadastrar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" />
+            <Button fx:id="btnCadastro" layoutX="27.0" layoutY="3.0" mnemonicParsing="false" onAction="#Cadastro" prefHeight="25.0" prefWidth="147.0" style="-fx-background-color: #80bfff;" text="Cadastrar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="59.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="31.0" prefWidth="117.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
          <children>
-            <Button fx:id="btnCancelarr" layoutX="1.0" layoutY="2.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" />
+            <Button fx:id="btnCancelarr" layoutX="1.0" layoutY="2.0" mnemonicParsing="false" onAction="#Cancelar" style="-fx-background-color: #ff6666;" text="Cancelar" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" />
          </children>
       </AnchorPane>
    </children>

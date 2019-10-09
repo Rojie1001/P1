@@ -20,7 +20,7 @@ public class Conection {
 
 	private static EntityManagerFactory getEntityManagerFactory() {
 		if (entityManagerFactory == null)
-			entityManagerFactory = Persistence.createEntityManagerFactory("teste");
+			entityManagerFactory = Persistence.createEntityManagerFactory("rojie.poo.ifsc.P1");
 		return entityManagerFactory;
 	}
 
