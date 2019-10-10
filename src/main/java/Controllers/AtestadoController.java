@@ -1,4 +1,4 @@
-package rojie.poo.ifsc.P1;
+package Controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,6 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import rojie.poo.ifsc.P1.AtestadoMatricula;
 
 public class AtestadoController {
 

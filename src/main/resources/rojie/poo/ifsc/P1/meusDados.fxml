@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="531.0" maxWidth="741.0" minHeight="400.0" minWidth="500.0" prefHeight="531.0" prefWidth="741.0" style="-fx-background-color: gray;" stylesheets="" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rojie.poo.ifsc.P1.meusDadosController">
+<AnchorPane maxHeight="531.0" maxWidth="741.0" minHeight="400.0" minWidth="500.0" prefHeight="531.0" prefWidth="741.0" style="-fx-background-color: gray;" stylesheets="" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.meusDadosController">
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: gray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>

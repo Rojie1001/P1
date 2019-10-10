@@ -1,4 +1,4 @@
-package rojie.poo.ifsc.P1;
+package Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

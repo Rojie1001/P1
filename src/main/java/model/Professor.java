@@ -4,36 +4,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
 public class Professor{
 	@Id
+	@GeneratedValue
+	@Column
+	private int id;
 	private String cpf;
-	
-	private String name;
+	private String nome;
+	private String curso;
 	private String login;
-	private String pass;
-	
-	
-	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-	private List<Aluno> alunos = new ArrayList<>();
-	
+	private String senha;
+
 	public Professor() {
-		
+
 	}
 
-	public Professor(String cpf, String name, String login, String pass) {
+	public Professor(String cpf,String nome, String curso, String login, String senha) {
 		super();
 		this.cpf = cpf;
-		this.name = name;
+		this.nome = nome;
+		this.curso = curso;
 		this.login = login;
-		this.pass = pass;
-		
+		this.senha = senha;
 	}
-
 
 
 	public String getCpf() {
@@ -44,14 +44,22 @@ public class Professor{
 		this.cpf = cpf;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
+
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
 
 	public String getLogin() {
 		return login;
@@ -61,28 +69,20 @@ public class Professor{
 		this.login = login;
 	}
 
-	public String getPass() {
-		return pass;
+	public String getSenha() {
+		return senha;
 	}
 
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
-
-	public List<Aluno> getAlunos() {
-		return alunos;
-	}
-
-	public void setAlunos(List<Aluno> alunos) {
-		this.alunos = alunos;
-	}
-
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+		result = prime * result + id;
 		return result;
 	}
 
@@ -100,9 +100,13 @@ public class Professor{
 				return false;
 		} else if (!cpf.equals(other.cpf))
 			return false;
+		if (id != other.id)
+			return false;
 		return true;
 	}
-	
+
+
+
 
 	
 }

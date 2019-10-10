@@ -1,4 +1,4 @@
-package rojie.poo.ifsc.P1;
+package Controllers;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import rojie.poo.ifsc.P1.App;
 public class mainAlunoController {
 
 	    @FXML
@@ -51,7 +52,7 @@ public class mainAlunoController {
 
 	    @FXML
 	    void MinhasTurmas(ActionEvent event) throws IOException {
-	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("minhasTurmas.fxml"));
+	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("listaAlunos.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));

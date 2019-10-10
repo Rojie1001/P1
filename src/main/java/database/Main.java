@@ -1,4 +1,4 @@
-package model;
+package database;
 
 import javafx.application.Application;
 import rojie.poo.ifsc.P1.App;

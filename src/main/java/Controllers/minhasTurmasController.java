@@ -1,4 +1,4 @@
-package rojie.poo.ifsc.P1;
+package Controllers;
 
 import java.io.IOException;
 
@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import rojie.poo.ifsc.P1.App;
 
 public class minhasTurmasController {
 	

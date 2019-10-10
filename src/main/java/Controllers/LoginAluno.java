@@ -1,4 +1,4 @@
-package rojie.poo.ifsc.P1;
+package Controllers;
 
 import java.io.IOException;
 
@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import rojie.poo.ifsc.P1.App;
 
 public class LoginAluno {
 
@@ -53,7 +54,7 @@ public class LoginAluno {
 
 	    @FXML
 	    public void SelectDB(ActionEvent event) {
-
+	    	
 	    }
 
 	}

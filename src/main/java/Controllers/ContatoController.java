@@ -1,4 +1,4 @@
-package rojie.poo.ifsc.P1;
+package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,6 +14,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import rojie.poo.ifsc.P1.App;
 
 public class ContatoController implements Initializable {
 
@@ -49,7 +50,7 @@ public class ContatoController implements Initializable {
     @FXML
     private TextArea txtArea;
 	
-	private ManifestacoesController enviatexto;
+	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -84,13 +85,7 @@ public class ContatoController implements Initializable {
 	}
 public void enviar() {
 		
-		if(enviatexto == null) {
-			enviatexto = new ManifestacoesController();
-			enviatexto.recebendo(txtArea.getText());
-		}
-		else {
-			enviatexto.recebendo(txtArea.getText());
-		}
+	
 	}
 
 }

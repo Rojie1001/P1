@@ -1,10 +1,15 @@
-package rojie.poo.ifsc.P1;
+package Controllers;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import database.AlunoDAO;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -13,7 +18,7 @@ import javafx.stage.Stage;
 import model.Aluno;
 
 
-public class CadastroController {
+public class CadastroController implements Initializable{
 
     
 	   @FXML
@@ -40,10 +45,27 @@ public class CadastroController {
 	    @FXML
 	    private Button btnCancelarr;
 
-	public static ObservableList<String> listCbox;
+	public ObservableList<String> listCbox = FXCollections.observableArrayList("Aluno", "Professor");
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		cmbUserRegister.setItems(listCbox);
+		
+	}
+    @FXML
+    void Verificar(ActionEvent event) {
+    	if(cmbUserRegister.getValue().contentEquals("Aluno")) {
+    		CadastroAluno();
+    	}
+    	else if(cmbUserRegister.getValue().contentEquals("Professor")) {
+    		
+    	}
+    }
+	
+
 	
     
-	public void Cadastro(ActionEvent e) throws IOException {
+	public void CadastroAluno(ActionEvent e) throws IOException {
 		Aluno aluno = new Aluno(txtCpf.getText(), txtNome.getText(), txtCurso.getText(),
 				txtNewLogin.getText(), txtNewSenha.getText());
 		System.out.println(txtCpf.getText());
