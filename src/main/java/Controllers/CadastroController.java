@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import database.AlunoDAO;
+import database.ProfessorDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Aluno;
+import model.Professor;
 
 
 public class CadastroController implements Initializable{
@@ -53,17 +55,14 @@ public class CadastroController implements Initializable{
 		
 	}
     @FXML
-    void Verificar(ActionEvent event) {
+    void Verificar(ActionEvent event) throws IOException {
     	if(cmbUserRegister.getValue().contentEquals("Aluno")) {
-    		CadastroAluno();
+    		CadastroAluno(event);
     	}
     	else if(cmbUserRegister.getValue().contentEquals("Professor")) {
-    		
+    		CadastroProfessor(event);
     	}
     }
-	
-
-	
     
 	public void CadastroAluno(ActionEvent e) throws IOException {
 		Aluno aluno = new Aluno(txtCpf.getText(), txtNome.getText(), txtCurso.getText(),
@@ -73,7 +72,26 @@ public class CadastroController implements Initializable{
 		Button btn = (Button) e.getSource();
 		Scene scene = btn.getScene();
 		Stage stage = (Stage) scene.getWindow();
+		txtCpf.setText(null);
+		txtNome.setText(null);
+		txtCurso.setText(null);
+		txtNewLogin.setText(null);
+		txtNewSenha.setText(null);
 		
+	}
+	public void CadastroProfessor(ActionEvent e) throws IOException {
+		Professor professor = new Professor(txtCpf.getText(), txtNome.getText(), txtCurso.getText(),
+				txtNewLogin.getText(), txtNewSenha.getText());
+		System.out.println(txtCpf.getText());
+		new ProfessorDAO().add(professor);
+		Button btn = (Button) e.getSource();
+		Scene scene = btn.getScene();
+		Stage stage = (Stage) scene.getWindow();
+		txtCpf.setText(null);
+		txtNome.setText(null);
+		txtCurso.setText(null);
+		txtNewLogin.setText(null);
+		txtNewSenha.setText(null);
 	}
 	public void Cancelar(ActionEvent e) throws IOException {
 		Button btn = (Button) e.getSource();
