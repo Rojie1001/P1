@@ -86,15 +86,19 @@ public class AlunoDAO implements InterfaceDAO<Aluno> {
 		entityMng.getTransaction().begin();
 		Aluno userDB = entityMng.find(Aluno.class, obj.getCpf());
 		userDB.setCpf(obj.getCpf());
+		userDB.setNome(obj.getNome());
+		userDB.setCurso(obj.getCurso());
+		userDB.setLogin(obj.getLogin());
+		userDB.setSenha(obj.getSenha());
 		entityMng.getTransaction().commit();
 		entityMng.close();
 
-		entityMng = Conection.getEntityManager();
-		entityMng.getTransaction().begin();
+		
 		if (alunos != null) {
 			for (Aluno aluno : alunos) {	
 				if (aluno.getCpf().equals(obj.getCpf())) {
 					aluno.setCpf(obj.getCpf());
+					aluno.setNome(obj.getNome());
 					aluno.setCurso(obj.getCurso());
 					aluno.setLogin(obj.getLogin());
 					aluno.setSenha(obj.getSenha());
@@ -102,6 +106,7 @@ public class AlunoDAO implements InterfaceDAO<Aluno> {
 				}
 			}
 		}
+		
 
 	}
 }
