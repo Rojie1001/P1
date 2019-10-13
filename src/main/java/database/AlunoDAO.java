@@ -12,9 +12,10 @@ public class AlunoDAO implements InterfaceDAO<Aluno> {
 	private static ObservableList<Aluno> alunos;
 	
 	public Aluno getAluno(String login) {
-		if (alunos != null)
+		alunos=(ObservableList<Aluno>) getAll();
+		if (alunos != null)			
 			for (Aluno aluno : alunos)
-				if (aluno.getCpf().contentEquals(login))
+				if (aluno.getLogin().equals(login))
 					return aluno;
 
 		EntityManager entityMng = Conection.getEntityManager();
@@ -41,7 +42,7 @@ public class AlunoDAO implements InterfaceDAO<Aluno> {
 		if (alunos == null) {
 			EntityManager entityMng = Conection.getEntityManager();
 			alunos = FXCollections.observableArrayList(
-					entityMng.createQuery("select user from Aluno as aluno", Aluno.class).getResultList());
+					entityMng.createQuery("select aluno from Aluno as aluno", Aluno.class).getResultList());
 			entityMng.close();
 		}
 		return alunos;
@@ -88,10 +89,15 @@ public class AlunoDAO implements InterfaceDAO<Aluno> {
 		entityMng.getTransaction().commit();
 		entityMng.close();
 
+		entityMng = Conection.getEntityManager();
+		entityMng.getTransaction().begin();
 		if (alunos != null) {
-			for (Aluno aluno : alunos) {
-				if (aluno.getCpf().contentEquals(obj.getCpf())) {
+			for (Aluno aluno : alunos) {	
+				if (aluno.getCpf().equals(obj.getCpf())) {
 					aluno.setCpf(obj.getCpf());
+					aluno.setCurso(obj.getCurso());
+					aluno.setLogin(obj.getLogin());
+					aluno.setSenha(obj.getSenha());
 					
 				}
 			}

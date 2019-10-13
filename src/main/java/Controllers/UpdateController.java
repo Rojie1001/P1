@@ -57,6 +57,9 @@ public class UpdateController {
 			txtNewSenha.setText(aluno.getSenha());
 			this.listController = listController;
 		}
+		public void Cancelar() {
+			
+		}
 
 		
 }

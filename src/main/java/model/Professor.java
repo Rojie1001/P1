@@ -13,9 +13,6 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Professor{
 	@Id
-	@GeneratedValue
-	@Column
-	private int id;
 	private String cpf;
 	private String nome;
 	private String curso;
@@ -82,7 +79,6 @@ public class Professor{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
-		result = prime * result + id;
 		return result;
 	}
 
@@ -100,10 +96,10 @@ public class Professor{
 				return false;
 		} else if (!cpf.equals(other.cpf))
 			return false;
-		if (id != other.id)
-			return false;
 		return true;
 	}
+
+
 
 
 

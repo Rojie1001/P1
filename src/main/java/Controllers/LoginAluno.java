@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import database.AlunoDAO;
+import database.ProfessorDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,6 +20,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Aluno;
+import model.Professor;
 import rojie.poo.ifsc.P1.App;
 
 public class LoginAluno implements Initializable {
@@ -61,11 +63,9 @@ public class LoginAluno implements Initializable {
 	public void EntrarAluno(ActionEvent e) throws IOException {
 		AlunoDAO aluno1 = new AlunoDAO();
 		Aluno aluno = aluno1.getAluno(txtLogin.getText().toString());
-		if (aluno == null)
-			System.out.println("não é nullo");
-		if (txtLogin.getText().toString().equals(aluno.getLogin())
-				&& txtSenha.getText().toString().equals(aluno.getSenha())) {
-			FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainAluno.fxml"));
+		if (aluno != null)
+			if (txtLogin.getText().toString().equals(aluno.getLogin())&& txtSenha.getText().toString().equals(aluno.getSenha())) {
+			FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("lista.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
@@ -77,6 +77,10 @@ public class LoginAluno implements Initializable {
 
 	@FXML
 	public void EntrarProfessor(ActionEvent e) throws IOException {
+		ProfessorDAO professor1 = new ProfessorDAO();
+		Professor professor = professor1.getProfessor(txtLogin.getText().toString());
+		if (professor != null) {
+			if (txtLogin.getText().toString().equals(professor.getLogin())&& txtSenha.getText().toString().equals(professor.getSenha())) {
 		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("contato.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
 		Stage stage = new Stage();
@@ -84,6 +88,8 @@ public class LoginAluno implements Initializable {
 		stage.show();
 		stage = (Stage) btnLogin.getScene().getWindow();
 		stage.close();
+			}
+		}else System.out.println("é nulo");
 	}
 
 	@FXML

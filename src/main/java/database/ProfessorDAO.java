@@ -12,6 +12,19 @@ import model.Professor;
 public class ProfessorDAO  implements InterfaceDAO<Professor>{
 	private static ObservableList<Professor> professores;
 
+	public Professor getProfessor(String login) {
+		professores = (ObservableList<Professor>) getAll();
+		if (professores != null)
+			for (Professor professor : professores)
+				if (professor.getLogin().equals(login))
+					return professor;
+
+		EntityManager entityMng = Conection.getEntityManager();
+		Professor professor = entityMng.find(Professor.class, login);
+		entityMng.close();
+		return professor;
+	}
+	
 	@Override
 	public Professor get(String id) {
 		if (professores != null)
@@ -30,7 +43,7 @@ public class ProfessorDAO  implements InterfaceDAO<Professor>{
 		if (professores == null) {
 			EntityManager entityMng = Conection.getEntityManager();
 			professores	= FXCollections.observableArrayList(
-					entityMng.createQuery("select user from User as user", Professor.class).getResultList());
+					entityMng.createQuery("select professor from Professor as professor", Professor.class).getResultList());
 			entityMng.close();
 		}
 		return professores;

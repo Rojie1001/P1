@@ -47,6 +47,7 @@ public class ListaController implements Initializable {
  		AlunoDAO dao = new AlunoDAO();
  		listAluno.setItems(null);
  		listAluno.setItems((ObservableList<Aluno>) dao.getAll());
+ 		
  	}
      
 
