@@ -10,7 +10,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -18,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Aluno;
 import model.Professor;
+import rojie.poo.ifsc.P1.App;
 
 
 public class CadastroController implements Initializable{
@@ -56,10 +59,10 @@ public class CadastroController implements Initializable{
 	}
     @FXML
     void Verificar(ActionEvent event) throws IOException {
-    	if(cmbUserRegister.getValue().contentEquals("Aluno")) {
+    	if(cmbUserRegister.getValue().toString().equals("Aluno")) {
     		CadastroAluno(event);
     	}
-    	else if(cmbUserRegister.getValue().contentEquals("Professor")) {
+    	else if(cmbUserRegister.getValue().toString().equals("Professor")) {
     		CadastroProfessor(event);
     	}
     }
@@ -94,9 +97,12 @@ public class CadastroController implements Initializable{
 		txtNewSenha.setText(null);
 	}
 	public void Cancelar(ActionEvent e) throws IOException {
-		Button btn = (Button) e.getSource();
-		Scene scene = btn.getScene();
-		Stage stage = (Stage) scene.getWindow();
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login.fxml"));
+		Parent root = (Parent) fxmlLoader.load();
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root));
+		stage.show();
+		stage = (Stage) btnCancelarr.getScene().getWindow();
 		stage.close();
 	}
 	

@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="CENTER_LEFT" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.mainAlunoController">
+<GridPane alignment="CENTER_LEFT" prefHeight="527.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerMainAluno">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="280.0" minWidth="10.0" prefWidth="18.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.0" minWidth="10.0" prefWidth="251.0" />
@@ -20,9 +20,10 @@
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="61.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="267.0" minHeight="10.0" prefHeight="108.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="230.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="267.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="128.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="460.0" minHeight="10.0" prefHeight="227.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="328.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="67.0" prefWidth="742.0" GridPane.columnIndex="1" GridPane.columnSpan="3">
@@ -33,6 +34,7 @@
                   <Button fx:id="btnAMatricula" mnemonicParsing="false" onAction="#Atestado" text="Atestado de Matricula" />
                   <Button fx:id="btnMinhasTarefas" mnemonicParsing="false" onAction="#MinhasTarefas" text="Minhas Tarefas" />
                   <Button fx:id="btnMeusDados" mnemonicParsing="false" onAction="#MeusDados" text="Meus Dados" />
+                  <Button fx:id="btnManifestacoes" mnemonicParsing="false" onAction="#Manifestacoes" text="Manifestações" />
               </buttons>
             </ButtonBar>
          </children>
@@ -69,7 +71,7 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #cef0e7;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+      <AnchorPane prefHeight="197.0" prefWidth="252.0" style="-fx-background-color: #cef0e7;" GridPane.columnIndex="2" GridPane.rowIndex="3">
          <children>
             <Text layoutX="33.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos tradicionais, como doces e bolos, podem ganhar um novo sabor depois de pesquisa desenvolvida pelo IFSC. Até então usada basicamente em chimarrão, tereré e chá, a erva-mate entrou na gastronomia com status de ingrediente em cinco formulações desenvolvidas por professores e alunos da área de produção alimentícia do Câmpus Canoinhas: sorvete, geleia, bala, chocotone e petit gateau." textAlignment="CENTER" wrappingWidth="186.13671875" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="32.86328125" />
          </children>

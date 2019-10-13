@@ -14,14 +14,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.control.SplitPane;
 import javafx.stage.Stage;
 import model.Aluno;
 import model.Professor;
 import rojie.poo.ifsc.P1.App;
-import javafx.scene.Node;
 
-public class ListController implements Initializable {
+
+public class ListaController implements Initializable {
+	
 	@FXML
     private ListView<Professor> listProfessor;
 
@@ -37,17 +37,18 @@ public class ListController implements Initializable {
     @FXML
     private Button btnSair;
     
-    public void updateList() {
-		AlunoDAO dao = new AlunoDAO();
-		listAluno.setItems(null);
-		listAluno.setItems((ObservableList<Aluno>) dao.getAll());
-	}
-    
+ 
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+    	updateList();
 		
 	}
+    public void updateList() {
+ 		AlunoDAO dao = new AlunoDAO();
+ 		listAluno.setItems(null);
+ 		listAluno.setItems((ObservableList<Aluno>) dao.getAll());
+ 	}
+     
 
     @FXML
     void Apagar(ActionEvent event) {
@@ -70,7 +71,7 @@ public class ListController implements Initializable {
 
     @FXML
     void Sair(ActionEvent event) {
-
+    	Platform.exit();
     }
 
 	

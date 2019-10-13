@@ -35,7 +35,7 @@ public class UpdateController {
 	    @FXML
 	    private Button btnCancelarr;
 	    
-	    private ListController listController;
+	    private ListaController listController;
 
 	    @FXML
 		private void update(ActionEvent e) {
@@ -49,7 +49,7 @@ public class UpdateController {
 			stage.close();
 		}
 
-		public void selectedAluno(Aluno aluno, ListController listController) {
+		public void selectedAluno(Aluno aluno, ListaController listController) {
 			txtCpf.setText(aluno.getCpf());
 			txtNome.setText(aluno.getCpf());
 			txtCurso.setText(aluno.getCurso());

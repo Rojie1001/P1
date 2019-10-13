@@ -1,7 +1,6 @@
 package Controllers;
 import java.io.IOException;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import rojie.poo.ifsc.P1.App;
-public class mainAlunoController {
+public class ControllerMainAluno {
 
 	    @FXML
 	    private Button btnMinhasTurmas;
@@ -22,9 +21,12 @@ public class mainAlunoController {
 
 	    @FXML
 	    private Button btnMeusDados;
+	    
+	    @FXML
+	    private Button btnManifestacoes;
 
 	    @FXML
-	    void Atestado() throws IOException {
+	    public void Atestado() throws IOException {
 	   	 FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("atestado.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
@@ -35,7 +37,7 @@ public class mainAlunoController {
 	    }
 
 	    @FXML
-	    void MeusDados(ActionEvent event) throws IOException {
+	    public void MeusDados() throws IOException {
 	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("meusDados.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
@@ -46,20 +48,30 @@ public class mainAlunoController {
 	    }
 
 	    @FXML
-	    void MinhasTarefas(ActionEvent event) {
+	    public void MinhasTarefas() {
 
 	    }
 
 	    @FXML
-	    void MinhasTurmas(ActionEvent event) throws IOException {
-	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("listaAlunos.fxml"));
+	    public void MinhasTurmas() throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("lista.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
 			stage.show();
 			stage = (Stage) btnMinhasTurmas.getScene().getWindow();
 			stage.close();
-	}
+	    }
+	    
+	    public void Manifestacoes() throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("contato.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			stage = (Stage) btnManifestacoes.getScene().getWindow();
+			stage.close();
+	    }
 	  
 
 }

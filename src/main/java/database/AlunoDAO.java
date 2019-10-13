@@ -10,6 +10,18 @@ import model.Aluno;
 
 public class AlunoDAO implements InterfaceDAO<Aluno> {
 	private static ObservableList<Aluno> alunos;
+	
+	public Aluno getAluno(String login) {
+		if (alunos != null)
+			for (Aluno aluno : alunos)
+				if (aluno.getCpf().contentEquals(login))
+					return aluno;
+
+		EntityManager entityMng = Conection.getEntityManager();
+		Aluno aluno = entityMng.find(Aluno.class, login);
+		entityMng.close();
+		return aluno;
+	}
 
 	@Override
 	public Aluno get(String id) {
@@ -29,7 +41,7 @@ public class AlunoDAO implements InterfaceDAO<Aluno> {
 		if (alunos == null) {
 			EntityManager entityMng = Conection.getEntityManager();
 			alunos = FXCollections.observableArrayList(
-					entityMng.createQuery("select user from User as user", Aluno.class).getResultList());
+					entityMng.createQuery("select user from Aluno as aluno", Aluno.class).getResultList());
 			entityMng.close();
 		}
 		return alunos;
