@@ -1,6 +1,7 @@
 package Controllers;
 
 import database.AlunoDAO;
+import database.ProfessorDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -9,6 +10,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Aluno;
+import model.Professor;
 
 public class UpdateController {
 	  @FXML
@@ -42,6 +44,11 @@ public class UpdateController {
 			Aluno aluno = new Aluno(txtCpf.getText(), txtNome.getText(), txtCurso.getText(),
 					txtNewLogin.getText(), txtNewSenha.getText());
 			new AlunoDAO().update(aluno);
+			
+			Professor professor = new Professor(txtCpf.getText(), txtNome.getText(), txtCurso.getText(),
+					txtNewLogin.getText(), txtNewSenha.getText());
+			new ProfessorDAO().update(professor);
+			
 			Button btn = (Button) e.getSource();
 			Scene scene = btn.getScene();
 			Stage stage = (Stage) scene.getWindow();
@@ -58,6 +65,16 @@ public class UpdateController {
 			this.listController = listController;
 		}
 		public void Cancelar() {
+			
+		}
+
+		public void selectedProfessor(Professor professor, ListaController listaController) {
+			txtCpf.setText(professor.getCpf());
+			txtNome.setText(professor.getCpf());
+			txtCurso.setText(professor.getCurso());
+			txtNewLogin.setText(professor.getLogin());
+			txtNewSenha.setText(professor.getSenha());
+			this.listController = listController;
 			
 		}
 

@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-@Entity
+@Entity(name = "Professor")
 public class Professor{
 	@Id
 	private String cpf;
@@ -97,6 +97,10 @@ public class Professor{
 		} else if (!cpf.equals(other.cpf))
 			return false;
 		return true;
+	}
+	@Override
+	public String toString() {
+		return "CPF: " + cpf +"\n"  +"Nome: " +  nome +"\n" +"Curso: " + curso +"\n" +"Login: " +login+" " + "Senha: " + senha;
 	}
 
 

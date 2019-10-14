@@ -104,7 +104,7 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return cpf + nome + curso + login + senha;
+		return "CPF: " + cpf +"\n"  +"Nome: " +  nome +"\n" +"Curso: " + curso +"\n" +"Login: " +login+" " + "Senha: " + senha;
 	}
 	
 

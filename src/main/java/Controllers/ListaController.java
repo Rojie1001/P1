@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import database.AlunoDAO;
+import database.ProfessorDAO;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -48,12 +49,17 @@ public class ListaController implements Initializable {
  		listAluno.setItems(null);
  		listAluno.setItems((ObservableList<Aluno>) dao.getAll());
  		
+ 		ProfessorDAO die = new ProfessorDAO();
+ 		listProfessor.setItems(null);
+ 		listProfessor.setItems((ObservableList<Professor>) die.getAll());
+ 		
  	}
      
 
     @FXML
     void Apagar(ActionEvent event) {
     	new AlunoDAO().delete((Aluno) listAluno.getSelectionModel().getSelectedItem());
+    	new ProfessorDAO().delete((Professor) listProfessor.getSelectionModel().getSelectedItem());
     }
 
     @FXML
@@ -67,6 +73,7 @@ public class ListaController implements Initializable {
 
 		UpdateController controller = (UpdateController) fxmlLoader.getController();
 		controller.selectedAluno(listAluno.getSelectionModel().getSelectedItem(), this);
+		controller.selectedProfessor(listProfessor.getSelectionModel().getSelectedItem(), this);
 	}
     
 
