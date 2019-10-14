@@ -67,7 +67,7 @@ public class ProfessorDAO  implements InterfaceDAO<Professor>{
 	public void delete(Professor obj) {
 		EntityManager entityMng = Conection.getEntityManager();
 		entityMng.getTransaction().begin();
-		Aluno userDB = entityMng.find(Aluno.class, obj.getCpf());
+		Professor userDB = entityMng.find(Professor.class, obj.getCpf());
 		entityMng.remove(userDB);
 		entityMng.getTransaction().commit();
 		entityMng.close();
@@ -85,7 +85,7 @@ public class ProfessorDAO  implements InterfaceDAO<Professor>{
 	public void update(Professor obj) {
 		EntityManager entityMng = Conection.getEntityManager();
 		entityMng.getTransaction().begin();
-		Aluno userDB = entityMng.find(Aluno.class, obj.getCpf());
+		Professor userDB = entityMng.find(Professor.class, obj.getCpf());
 		userDB.setCpf(obj.getCpf());
 		entityMng.getTransaction().commit();
 		entityMng.close();
