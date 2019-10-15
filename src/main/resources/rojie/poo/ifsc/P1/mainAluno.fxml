@@ -33,8 +33,8 @@
                 <Button fx:id="btnMinhasTurmas" mnemonicParsing="false" onAction="#MinhasTurmas" text="Minhas Turmas" />
                   <Button fx:id="btnAMatricula" mnemonicParsing="false" onAction="#Atestado" text="Atestado de Matricula" />
                   <Button fx:id="btnMinhasTarefas" mnemonicParsing="false" onAction="#MinhasTarefas" text="Minhas Tarefas" />
-                  <Button fx:id="btnMeusDados" mnemonicParsing="false" onAction="#MeusDados" text="Meus Dados" />
-                  <Button fx:id="btnManifestacoes" mnemonicParsing="false" onAction="#Manifestacoes" text="Manifestações" />
+                  <Button fx:id="btnManifestacoes" mnemonicParsing="false" onAction="#Manifestacoes" text="Contato" />
+                  <Button fx:id="btnMeusDados" mnemonicParsing="false" onAction="#MeusDados" text="Voltar" />
               </buttons>
             </ButtonBar>
          </children>

@@ -87,6 +87,10 @@ public class ProfessorDAO  implements InterfaceDAO<Professor>{
 		entityMng.getTransaction().begin();
 		Professor userDB = entityMng.find(Professor.class, obj.getCpf());
 		userDB.setCpf(obj.getCpf());
+		userDB.setNome(obj.getNome());
+		userDB.setCurso(obj.getCurso());
+		userDB.setLogin(obj.getLogin());
+		userDB.setSenha(obj.getSenha());
 		entityMng.getTransaction().commit();
 		entityMng.close();
 
@@ -94,6 +98,11 @@ public class ProfessorDAO  implements InterfaceDAO<Professor>{
 			for (Professor professor : professores) {
 				if (professor.getCpf().contentEquals(obj.getCpf())) {
 					professor.setCpf(obj.getCpf());
+					professor.getNome().contentEquals(obj.getNome());
+					userDB.setNome(obj.getNome());
+					userDB.setCurso(obj.getCurso());
+					userDB.setLogin(obj.getLogin());
+					userDB.setSenha(obj.getSenha());
 					
 				}
 			}

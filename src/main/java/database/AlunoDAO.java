@@ -98,6 +98,7 @@ public class AlunoDAO implements InterfaceDAO<Aluno> {
 			for (Aluno aluno : alunos) {	
 				if (aluno.getCpf().equals(obj.getCpf())) {
 					aluno.setCpf(obj.getCpf());
+					aluno.getNome().contentEquals(obj.getNome());
 					aluno.setNome(obj.getNome());
 					aluno.setCurso(obj.getCurso());
 					aluno.setLogin(obj.getLogin());

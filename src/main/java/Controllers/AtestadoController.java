@@ -1,12 +1,20 @@
 package Controllers;
 
+import java.io.IOException;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import rojie.poo.ifsc.P1.App;
 import rojie.poo.ifsc.P1.AtestadoMatricula;
 
 public class AtestadoController {
@@ -34,6 +42,9 @@ public class AtestadoController {
     
     @FXML
     private TableView<AtestadoMatricula> tblAtestado;
+    
+    @FXML
+    private Button btnVoltar;
 
    
 	@FXML
@@ -59,5 +70,16 @@ public class AtestadoController {
 	
 		
 	}
+	@FXML
+	public void Voltar() throws IOException {
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainAluno.fxml"));
+		Parent root = (Parent) fxmlLoader.load();
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root));
+		stage.show();
+		stage = (Stage) btnVoltar.getScene().getWindow();
+		stage.close();
+	}
+
 
 }

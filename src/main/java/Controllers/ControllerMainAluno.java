@@ -48,13 +48,19 @@ public class ControllerMainAluno {
 	    }
 
 	    @FXML
-	    public void MinhasTarefas() {
-
+	    public void MinhasTarefas() throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("minhasTarefas.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			stage = (Stage) btnMinhasTurmas.getScene().getWindow();
+			stage.close();
 	    }
 
 	    @FXML
 	    public void MinhasTurmas() throws IOException {
-	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("lista.fxml"));
+	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("minhasTurmas.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));

@@ -65,13 +65,12 @@ public class LoginAluno implements Initializable {
 		Aluno aluno = aluno1.getAluno(txtLogin.getText().toString());
 		if (aluno != null)
 			if (txtLogin.getText().toString().equals(aluno.getLogin())&& txtSenha.getText().toString().equals(aluno.getSenha())) {
-			FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("lista.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainAluno.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
 			stage.show();
 			stage = (Stage) btnLogin.getScene().getWindow();
-			stage.close();
 		}
 	}
 
@@ -81,7 +80,7 @@ public class LoginAluno implements Initializable {
 		Professor professor = professor1.getProfessor(txtLogin.getText().toString());
 		if (professor != null) {
 			if (txtLogin.getText().toString().equals(professor.getLogin())&& txtSenha.getText().toString().equals(professor.getSenha())) {
-		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("contato.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainProfessor.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
 		Stage stage = new Stage();
 		stage.setScene(new Scene(root));

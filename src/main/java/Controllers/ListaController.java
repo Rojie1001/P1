@@ -30,40 +30,57 @@ public class ListaController implements Initializable {
     private ListView<Aluno> listAluno;
 
     @FXML
-    private Button btnApagar;
+    private Button btnApagarProf;
 
     @FXML
-    private Button btnAtualizar;
+    private Button btnAtualizarProf;
+
+    @FXML
+    private Button btnApagarAlu;
+
+    @FXML
+    private Button btnAtualizarAlu;
 
     @FXML
     private Button btnSair;
-    
  
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
-    	updateList();
+    	updateListProfessor();
+    	updateListAluno();
+    	
 		
 	}
-    public void updateList() {
- 		AlunoDAO dao = new AlunoDAO();
- 		listAluno.setItems(null);
- 		listAluno.setItems((ObservableList<Aluno>) dao.getAll());
- 		
+    public void updateListProfessor() {	
  		ProfessorDAO die = new ProfessorDAO();
  		listProfessor.setItems(null);
  		listProfessor.setItems((ObservableList<Professor>) die.getAll());
  		
  	}
      
+    public void updateListAluno() {
+ 		AlunoDAO dao = new AlunoDAO();
+ 		listAluno.setItems(null);
+ 		listAluno.setItems((ObservableList<Aluno>) dao.getAll());
+ 		
+ 	
+ 		
+ 	}
+  
 
     @FXML
-    void Apagar(ActionEvent event) {
+    void ApagarAluno(ActionEvent event) {
+    	
     	new AlunoDAO().delete((Aluno) listAluno.getSelectionModel().getSelectedItem());
+    	
+    }
+    @FXML
+    void ApagarProfessor() {
     	new ProfessorDAO().delete((Professor) listProfessor.getSelectionModel().getSelectedItem());
     }
 
     @FXML
-    void Atualizar(ActionEvent event) throws IOException {
+    void AtualizarAluno(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("update.fxml"));
 		Parent parent = fxmlLoader.load();
 		Scene scene = new Scene(parent);
@@ -73,6 +90,17 @@ public class ListaController implements Initializable {
 
 		UpdateController controller = (UpdateController) fxmlLoader.getController();
 		controller.selectedAluno(listAluno.getSelectionModel().getSelectedItem(), this);
+	}
+    @FXML
+    void AtualizarProfessor(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("update.fxml"));
+		Parent parent = fxmlLoader.load();
+		Scene scene = new Scene(parent);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
+
+		UpdateController controller = (UpdateController) fxmlLoader.getController();
 		controller.selectedProfessor(listProfessor.getSelectionModel().getSelectedItem(), this);
 	}
     
@@ -81,6 +109,18 @@ public class ListaController implements Initializable {
     void Sair(ActionEvent event) {
     	Platform.exit();
     }
+    @FXML
+    void Voltar(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login.fxml"));
+		Parent parent = fxmlLoader.load();
+		Scene scene = new Scene(parent);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
+		stage.close();
+    
+    }
+    
 
 	
 	
