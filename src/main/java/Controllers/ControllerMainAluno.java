@@ -38,7 +38,7 @@ public class ControllerMainAluno {
 
 	    @FXML
 	    public void MeusDados() throws IOException {
-	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("meusDados.fxml"));
+	    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));

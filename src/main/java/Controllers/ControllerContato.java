@@ -13,10 +13,11 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import rojie.poo.ifsc.P1.App;
 
-public class ContatoController implements Initializable {
+public class ControllerContato implements Initializable {
 
 	@FXML
 	private ChoiceBox<String> choicebox1 = new ChoiceBox<>();
@@ -49,6 +50,9 @@ public class ContatoController implements Initializable {
 
     @FXML
     private TextArea txtArea;
+    
+    @FXML
+    private TextField txtTitulo;
 	
 	
 
@@ -74,7 +78,7 @@ public class ContatoController implements Initializable {
 		stage.close();
 	}
 	public void Cancelar()throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("telaone.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainAluno.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
 
 		Stage stage = new Stage();
@@ -84,7 +88,8 @@ public class ContatoController implements Initializable {
 		stage.close();
 	}
 public void enviar() {
-		
+		txtArea.setText(null);
+		txtTitulo.setText(null);
 	
 	}
 

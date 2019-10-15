@@ -37,7 +37,7 @@
               <buttons>
                   <Button fx:id="btnLista" mnemonicParsing="false" onAction="#Lista" text="Lista de Usuários" />
                   <Button fx:id="btnChamada" mnemonicParsing="false" onAction="#Chamada" text="Chamada" />
-                <Button fx:id="btnVoltar" mnemonicParsing="false" onAction="#Voltar" text="Sair" />
+                <Button fx:id="btnSair" mnemonicParsing="false" onAction="#Sair" text="Sair" />
               </buttons>
             </ButtonBar>
          </children>

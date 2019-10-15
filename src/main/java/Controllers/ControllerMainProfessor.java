@@ -36,7 +36,7 @@ public class ControllerMainProfessor implements Initializable{
     private Button btnChamada;
 
     @FXML
-    private Button btnVoltar;
+    private Button btnSair;
     
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -75,13 +75,14 @@ public class ControllerMainProfessor implements Initializable{
     }
 
     @FXML
-    void Voltar(ActionEvent event) throws IOException {
+    void Sair(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login.fxml"));
 		Parent parent = fxmlLoader.load();
 		Scene scene = new Scene(parent);
 		Stage stage = new Stage();
 		stage.setScene(scene);
 		stage.show();
+		stage = (Stage) btnSair.getScene().getWindow();
 		stage.close();
     
     }

@@ -50,11 +50,11 @@ public class AtestadoController {
 	@FXML
 	public void initialize() {		
 		
-		colCod.setCellValueFactory(new PropertyValueFactory("Codigo"));
-		colComp.setCellValueFactory(new PropertyValueFactory("Comp"));
-		colTurma.setCellValueFactory(new PropertyValueFactory("Turma"));
-		colStatus.setCellValueFactory(new PropertyValueFactory("Status"));
-		colHorario.setCellValueFactory(new PropertyValueFactory("Horario"));
+		colCod.setCellValueFactory(new PropertyValueFactory<>("Codigo"));
+		colComp.setCellValueFactory(new PropertyValueFactory<>("Comp"));
+		colTurma.setCellValueFactory(new PropertyValueFactory<>("Turma"));
+		colStatus.setCellValueFactory(new PropertyValueFactory<>("Status"));
+		colHorario.setCellValueFactory(new PropertyValueFactory<>("Horario"));
 
 		tblAtestado.setItems(listaAtestado());
 		
