@@ -55,7 +55,6 @@ public class UpdateController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		cmbveri.setItems(listCmbox);
-
 	}
 
 	@FXML
@@ -69,7 +68,7 @@ public class UpdateController implements Initializable {
 			listController.updateListAluno();
 			stage.close();
 			
-		} else  {
+		} else {
 			Professor professor = new Professor(txtCpf.getText(), txtNome.getText(), txtCurso.getText(),
 					txtNewLogin.getText(), txtNewSenha.getText());
 			new ProfessorDAO().update(professor);
@@ -85,7 +84,7 @@ public class UpdateController implements Initializable {
 		txtCurso.setText(professor.getCurso());
 		txtNewLogin.setText(professor.getLogin());
 		txtNewSenha.setText(professor.getSenha());
-		this.listController = listControlle;
+		this.listControlle = listaControlle;
 
 	}
 

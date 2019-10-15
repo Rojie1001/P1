@@ -40,6 +40,8 @@ public class ProfessorDAO  implements InterfaceDAO<Professor>{
 
 	@Override
 	public List<Professor> getAll() {
+		
+		professores = null;
 		if (professores == null) {
 			EntityManager entityMng = Conection.getEntityManager();
 			professores	= FXCollections.observableArrayList(

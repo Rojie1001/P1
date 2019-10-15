@@ -59,11 +59,9 @@ public class ListaController implements Initializable {
  	}
      
     public void updateListAluno() {
- 		AlunoDAO dao = new AlunoDAO();
+ 		AlunoDAO dao = new AlunoDAO();	
  		listAluno.setItems(null);
  		listAluno.setItems((ObservableList<Aluno>) dao.getAll());
- 		
- 	
  		
  	}
   
