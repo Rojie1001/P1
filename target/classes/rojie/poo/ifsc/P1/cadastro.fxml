@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="TOP_CENTER" prefHeight="457.0" prefWidth="687.0" style="-fx-background-color: #e1f7f6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CadastroController">
+<GridPane alignment="TOP_CENTER" prefHeight="457.0" prefWidth="687.0" style="-fx-background-color: #e1f7f6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CadastroController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="94.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="121.0" />
@@ -53,7 +53,7 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
          <children>
             <Label layoutY="5.0" text="Curso" />
-            <TextField fx:id="txtCurso" layoutX="51.0" layoutY="1.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="2.0" />
+            <ComboBox fx:id="cmbUserCurso" prefWidth="150.0" AnchorPane.leftAnchor="50.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
