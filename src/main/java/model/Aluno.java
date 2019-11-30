@@ -15,7 +15,7 @@ public class Aluno {
 	private String cpf;
 	private String nome;
 	
-	private String curso;
+	private String curso;//alterado para strig, pois o curso com aluno so vai existir no banco, no cliente ele tem o id do curso
 	@Column
 	private String login;
 	private String senha;
