@@ -41,7 +41,7 @@ public class ControllerChamada implements Initializable, InterfaceTherad {
 
     @FXML
     void Voltar(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainAluno.fxml"));
+    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainProfessor.fxml"));
 		Parent parent = fxmlLoader.load();
 		Scene scene = new Scene(parent);
 		Stage stage = new Stage();

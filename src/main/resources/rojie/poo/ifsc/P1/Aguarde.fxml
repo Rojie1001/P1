@@ -10,6 +10,6 @@
    <children>
       <Label layoutX="286.0" layoutY="171.0" text="Carregando..." />
       <ProgressBar fx:id="barra" layoutX="222.0" layoutY="200.0" prefWidth="200.0" progress="0.01" />
-      <Button fx:id="cancelar" layoutX="291.0" layoutY="271.0" mnemonicParsing="false" text="Cancelar" />
+      <Button fx:id="btncancelar" layoutX="291.0" layoutY="271.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
    </children>
 </AnchorPane>

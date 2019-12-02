@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerMainProfessor">
+<GridPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerMainProfessor">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="609.0" minWidth="10.0" prefWidth="563.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="10.0" prefWidth="90.0" />
@@ -37,6 +37,9 @@
               <buttons>
                   <Button fx:id="btnLista" mnemonicParsing="false" onAction="#Lista" text="Lista de Usuários" />
                   <Button fx:id="btnChamada" mnemonicParsing="false" onAction="#Chamada" text="Chamada" />
+                  <Button fx:id="btntarefas" mnemonicParsing="false" onAction="#Tarefas" text="Tarefas" />
+                  <Button fx:id="btnturmas" mnemonicParsing="false" onAction="#Turmas" text="Turmas" />
+                  <Button fx:id="btnmaterias" mnemonicParsing="false" onAction="#Materias" text="Matérias" />
                 <Button fx:id="btnSair" mnemonicParsing="false" onAction="#Sair" text="Sair" />
               </buttons>
             </ButtonBar>

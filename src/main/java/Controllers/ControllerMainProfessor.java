@@ -38,6 +38,15 @@ public class ControllerMainProfessor implements Initializable, InterfaceTherad{
 
     @FXML
     private Button btnChamada;
+    
+    @FXML
+    private Button btntarefas;
+    
+    @FXML
+    private Button btnturmas;
+    
+    @FXML
+    private Button btnmaterias;
 
     @FXML
     private Button btnSair;
@@ -54,6 +63,46 @@ public class ControllerMainProfessor implements Initializable, InterfaceTherad{
     private ObservableList<Materias> listaMaterias(List<Materias> list) {
 		return FXCollections.observableArrayList(list);
     }
+    
+    @FXML
+    void Materias(ActionEvent event) throws IOException {
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("CadastroMaterias.fxml"));
+		Parent root = (Parent) fxmlLoader.load();
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root));
+		stage.show();
+		stage = (Stage) btnturmas.getScene().getWindow();
+		stage.close();
+    	
+    }
+    
+    @FXML
+    void Tarefas(ActionEvent event) throws IOException {
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("CadastroTarefas.fxml"));
+		Parent root = (Parent) fxmlLoader.load();
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root));
+		stage.show();
+		stage = (Stage) btntarefas.getScene().getWindow();
+		stage.close();
+    	
+    
+    }
+    
+    @FXML
+    void Turmas(ActionEvent event) throws IOException {
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("CadastroTurmas.fxml"));
+		Parent root = (Parent) fxmlLoader.load();
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root));
+		stage.show();
+		stage = (Stage) btnturmas.getScene().getWindow();
+		stage.close();
+    	
+    }
 
     @FXML
     void Chamada(ActionEvent event) throws IOException {
@@ -62,12 +111,13 @@ public class ControllerMainProfessor implements Initializable, InterfaceTherad{
 		Parent root = (Parent) fxmlLoader.load();
 		AguardeController controller = (AguardeController)fxmlLoader.getController();
 		controller.setProxTela("Chamada");
-		controller.conectar("minhaLista@");
+		controller.conectar("minhaChamada@");
 		Stage stage = new Stage();
 		stage.setScene(new Scene(root));
-		stage = (Stage) btnLista.getScene().getWindow();
-		stage.close();
 		stage.show();
+		stage = (Stage) btnChamada.getScene().getWindow();
+		stage.close();
+		
 		
     }
 

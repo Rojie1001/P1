@@ -61,7 +61,5 @@
          </children>
       </AnchorPane>
    </children>
-   <effect>
-      <Reflection />
-   </effect>
+  
 </GridPane>

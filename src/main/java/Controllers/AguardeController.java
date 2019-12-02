@@ -7,8 +7,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import Threads.ConexaoServer;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,31 +24,34 @@ import model.InterfaceTherad;
 import rojie.poo.ifsc.P1.App;
 
 public class AguardeController implements Initializable {
-	
+
 	@FXML
 	ProgressBar barra;
 	@FXML
-	Button cancelar;
-	
+	Button btncancelar;
+
 	private String proxTela;
-	
+	private String status = "rodando";
+
 	public void setProxTela(String proxTela) {
 		this.proxTela = proxTela;
 	}
 
 	private Thread threadConexao;
+	private Thread threadBarra;
 	private ConexaoServer clienteThread;
-	
-	public class ThreadBarra implements Runnable{
+	private String menssagem;
+
+	public class ThreadBarra implements Runnable {
 
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
 			double progesso = 0;
-			while(threadConexao.isAlive()) {
+			while (threadConexao.isAlive()) {
 				barra.setProgress(progesso);
-				progesso+=0.05;
-				if(barra.getProgress() >= 1.0) {
+				progesso += 0.05;
+				if (barra.getProgress() >= 1.0) {
 					progesso = 0;
 				}
 				try {
@@ -56,59 +61,100 @@ public class AguardeController implements Initializable {
 					e.printStackTrace();
 				}
 			}
-		}
+
+			Platform.runLater(new Runnable() {
+				@Override
+				public void run() {
+					while (clienteThread.getMenssagem().equals(menssagem));
+
+					
+
 		
+
+					try {
+						if(status.equals("rodando")) {
+						carregarTela();
+						}
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			});
+		}
+
 	}
-	
+
+	public class ThreadVerificadora implements Runnable {
+
+		@Override
+		public void run() {
+
+			Platform.runLater(new Runnable() {
+				@Override
+				public void run() {
+					while (clienteThread.getMenssagem().equals(menssagem));
+
+					
+
+					try {
+						carregarTela();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			});
+
+		}
+
+	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-				try {
-					Thread.currentThread().sleep(1000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 	}
-	
+
 	public void conectar(String menssagemFora) {
-		
-		
-		
-		String menssagem = menssagemFora;
-		ThreadBarra barraThread = new ThreadBarra();
-		Thread threadBarra = new Thread(barraThread);
-		threadBarra.start();
+
+		menssagem = menssagemFora;
 		clienteThread = new ConexaoServer(menssagem);
 		threadConexao = new Thread(clienteThread);
-		threadConexao.start();	
-		
-		while(menssagem.equals(clienteThread.getMenssagem())) {
-			
-			System.out.println(clienteThread.getMenssagem());
-		}
-			threadBarra.stop();
-		try {
-			
-			carregarTela();			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		threadConexao.start();
+		ThreadBarra barraThread = new ThreadBarra();
+		threadBarra = new Thread(barraThread);
+		threadBarra.start();
+		ThreadVerificadora verificadora = new ThreadVerificadora();
+		Thread verificadoraThread = new Thread(verificadora);
+
 	}
-	
-	public void carregarTela() throws IOException{	
-		
-		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(proxTela+".fxml"));
+
+	public void carregarTela() throws IOException {
+		threadBarra.stop();
+		threadConexao.stop();
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(proxTela + ".fxml"));
 		Parent root = (Parent) fxmlLoader.load();
-		InterfaceTherad controller = (InterfaceTherad)fxmlLoader.getController();
+		InterfaceTherad controller = (InterfaceTherad) fxmlLoader.getController();
 		controller.setResposta(clienteThread.getMenssagem());
 		Stage stage = new Stage();
 		stage.setScene(new Scene(root));
 		stage.show();
-		stage = (Stage) cancelar.getScene().getWindow();
+		stage = (Stage) btncancelar.getScene().getWindow();
 		stage.close();
 	}
 	
+	@FXML
+	void Cancelar(ActionEvent event) throws IOException {
+		
+		this.status="encerrado";
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login.fxml"));
+		Parent root = (Parent) fxmlLoader.load();
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root));
+		stage.show();
+		stage = (Stage) btncancelar.getScene().getWindow();
+		stage.close();
+
+	}
 
 }

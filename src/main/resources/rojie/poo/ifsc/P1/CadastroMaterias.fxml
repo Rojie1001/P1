@@ -42,7 +42,7 @@
       </AnchorPane>
       <AnchorPane GridPane.rowIndex="3">
          <children>
-            <Button fx:id="btnEnviar" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Enviar" AnchorPane.leftAnchor="14.0" />
+            <Button fx:id="btnEnviar" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" onAction="#Envio" text="Enviar" AnchorPane.leftAnchor="14.0" />
          </children>
       </AnchorPane>
       <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -57,11 +57,9 @@
       </AnchorPane>
       <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="3">
          <children>
-            <Button fx:id="btnVoltar" layoutX="159.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Voltar" AnchorPane.rightAnchor="14.0" />
+            <Button fx:id="btnVoltar" layoutX="159.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" onAction="#Voltar" text="Voltar" AnchorPane.rightAnchor="14.0" />
          </children>
       </AnchorPane>
    </children>
-   <effect>
-      <Reflection />
-   </effect>
+ 
 </GridPane>

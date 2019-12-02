@@ -47,6 +47,9 @@ public class ListaController implements Initializable, InterfaceTherad{
 
     @FXML
     private Button btnSair;
+    
+    @FXML
+    private Button btnVoltar;
  
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -134,14 +137,14 @@ public class ListaController implements Initializable, InterfaceTherad{
     }
     @FXML
     void Voltar(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("login.fxml"));
-		Parent parent = fxmlLoader.load();
-		Scene scene = new Scene(parent);
+    	FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainProfessor.fxml"));
+		Parent root = (Parent) fxmlLoader.load();
 		Stage stage = new Stage();
-		stage.setScene(scene);
+		stage.setScene(new Scene(root));
 		stage.show();
+		stage = (Stage) btnVoltar.getScene().getWindow();
 		stage.close();
-    
+
     }
 	@Override
 	public void setResposta(String resposta) {
